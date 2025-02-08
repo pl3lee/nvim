@@ -60,3 +60,13 @@ require('mason-lspconfig').setup({
     end,
   }
 })
+
+-- Add golangci_lint_ls  
+require('lspconfig').golangci_lint_ls.setup({
+  capabilities = lsp_capabilities,
+  init_options = {
+
+    -- This tells golangci_lint_ls to run golangci-lint with JSON output
+    command = { "golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1" },
+  },
+})
