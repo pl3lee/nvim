@@ -3,4 +3,4 @@ require("config.lazy")
 require("config.lsp")
 require("config.completion")
 require("config")
-require("config.filetree")
+

@@ -24,7 +24,6 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     { import = "plugins" },
-    -- Add LSP plugins
     { "neovim/nvim-lspconfig" },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/nvim-cmp" },
@@ -33,9 +32,6 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim" },
     { "L3MON4D3/LuaSnip" },
     { "saadparwaiz1/cmp_luasnip" },
-    { "nvim-tree/nvim-tree.lua",
-      dependencies = { "nvim-tree/nvim-web-devicons" }
-    },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
