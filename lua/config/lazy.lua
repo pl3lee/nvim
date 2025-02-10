@@ -21,21 +21,26 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
-  spec = {
-    -- import your plugins
-    { import = "plugins" },
-    { "neovim/nvim-lspconfig" },
-    { "hrsh7th/cmp-nvim-lsp" },
-    { "hrsh7th/nvim-cmp" },
-    { "hrsh7th/cmp-buffer" },
-    { "williamboman/mason.nvim" },
-    { "williamboman/mason-lspconfig.nvim" },
-    { "L3MON4D3/LuaSnip" },
-    { "saadparwaiz1/cmp_luasnip" },
-  },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
-  -- automatically check for plugin updates
-  checker = { enabled = true },
+    spec = {
+        -- import your plugins
+        { import = "plugins" },
+        { "neovim/nvim-lspconfig" },
+        { "hrsh7th/cmp-nvim-lsp" },
+        { "hrsh7th/nvim-cmp" },
+        { "hrsh7th/cmp-buffer" },
+        { "williamboman/mason.nvim" },
+        { "williamboman/mason-lspconfig.nvim" },
+        { "L3MON4D3/LuaSnip" },
+        { "saadparwaiz1/cmp_luasnip" },
+        { "github/copilot.vim",
+        config = function()
+            vim.g.copilot_enabled = false
+        end,
+    }
+},
+-- Configure any other settings here. See the documentation for more details.
+-- colorscheme that will be used when installing plugins.
+install = { colorscheme = { "habamax" } },
+-- automatically check for plugin updates
+checker = { enabled = true },
 })
