@@ -40,3 +40,5 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.o.completeopt = "menuone,noinsert,noselect,popup"
+
+vim.g.pyindent_open_paren = 0
