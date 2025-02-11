@@ -8,6 +8,11 @@ return {
         build = "make tiktoken", -- Only on MacOS or Linux
         opts = {
             -- See Configuration section for options
+            sticky = {
+                '@models Using claude-3.5-sonnet',
+                '#files:full',
+                '#buffer',
+            }
         },
         -- See Commands section for default commands if you want to lazy load on them
     },
