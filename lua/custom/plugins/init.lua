@@ -107,7 +107,7 @@ return {
       -- See Configuration section for options
       sticky = {
         '@models Using claude-3.5-sonnet',
-        '#files:full',
+        '#files',
         '#buffer',
       },
     },
