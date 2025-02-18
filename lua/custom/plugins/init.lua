@@ -42,28 +42,45 @@ return {
       -- REQUIRED
       harpoon:setup()
 
+      vim.keymap.set('n', '<leader>A', function()
+        harpoon:list():prepend()
+      end, { desc = 'Prepend current file to harpoon' })
+
       vim.keymap.set('n', '<leader>a', function()
         harpoon:list():add()
       end, { desc = 'Add current file to harpoon' })
+
       vim.keymap.set('n', '<C-j>', function()
         harpoon:list():select(1)
-      end)
+      end, { desc = 'Select first harpoon mark' })
+
       vim.keymap.set('n', '<C-k>', function()
         harpoon:list():select(2)
-      end)
+      end, { desc = 'Select second harpoon mark' })
+
       vim.keymap.set('n', '<C-l>', function()
         harpoon:list():select(3)
-      end)
+      end, { desc = 'Select third harpoon mark' })
+
       vim.keymap.set('n', '<C-;>', function()
         harpoon:list():select(4)
-      end)
+      end, { desc = 'Select fourth harpoon mark' })
 
-      vim.keymap.set('n', '<C-S-P>', function()
-        harpoon:list():prev()
-      end)
-      vim.keymap.set('n', '<C-S-N>', function()
-        harpoon:list():next()
-      end)
+      vim.keymap.set('n', '<leader><C-j>', function()
+        harpoon:list():replace_at(1)
+      end, { desc = 'Replace first harpoon mark' })
+
+      vim.keymap.set('n', '<leader><C-k>', function()
+        harpoon:list():replace_at(2)
+      end, { desc = 'Replace second harpoon mark' })
+
+      vim.keymap.set('n', '<leader><C-l>', function()
+        harpoon:list():replace_at(3)
+      end, { desc = 'Replace third harpoon mark' })
+
+      vim.keymap.set('n', '<leader><C-;>', function()
+        harpoon:list():replace_at(4)
+      end, { desc = 'Replace fourth harpoon mark' })
 
       -- basic telescope configuration
       local conf = require('telescope.config').values
