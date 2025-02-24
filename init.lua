@@ -99,6 +99,7 @@ vim.g.have_nerd_font = true
 --  For more options, you can see `:help option-list`
 
 vim.o.completeopt = 'menuone,noinsert,noselect,popup'
+vim.opt.colorcolumn = '80'
 
 -- Make line numbers default
 vim.opt.number = true
