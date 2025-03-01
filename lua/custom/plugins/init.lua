@@ -123,8 +123,7 @@ return {
     opts = {
       -- See Configuration section for options
       sticky = {
-        '@models Using claude-3.5-sonnet',
-        '#files',
+        '@models Using claude-3.7-sonnet-thought',
         '#buffer',
       },
     },
