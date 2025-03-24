@@ -133,4 +133,17 @@ return {
     'windwp/nvim-ts-autotag',
     opts = {},
   },
+  {
+    'NeogitOrg/neogit',
+    dependencies = {
+      'nvim-lua/plenary.nvim', -- required
+      'sindrets/diffview.nvim', -- optional - Diff integration
+      'nvim-telescope/telescope.nvim', -- optional
+    },
+    config = function()
+      vim.keymap.set('n', '<leader>gs', function()
+        require('neogit').open { kind = 'vsplit' }
+      end, { desc = 'Open Neogit in split' })
+    end,
+  },
 }
