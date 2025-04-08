@@ -1,3 +1,8 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+vim.opt.clipboard = "unnamedplus"
+
 -- Search
 vim.opt.smartcase = true  -- Enable smart-case search
 vim.opt.ignorecase = true -- Ignore case in search
