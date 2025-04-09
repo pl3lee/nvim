@@ -14,7 +14,7 @@ return {
                     go_in_plus = "<CR>",
                 },
             }
-            vim.keymap.set("n", "\\", "<cmd>lua MiniFiles.open()<CR>", { desc = "Mini Files Open"})
+            vim.keymap.set("n", "\\", "<cmd>lua MiniFiles.open()<CR>", { desc = "Mini Files Open" })
         end
     }
 }
