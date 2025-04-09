@@ -38,6 +38,7 @@ vim.keymap.set('n', 'n', 'nzzzv') -- Recenter cursor for search
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste without replacing buffer content' })
+vim.keymap.set('n', '<leader>d', [["_d]], { desc = 'Delete without replacing buffer content' })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking text",
