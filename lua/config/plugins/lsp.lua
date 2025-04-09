@@ -14,7 +14,25 @@ return {
         },
         config = function()
             local capabilities = require('blink.cmp').get_lsp_capabilities()
+
+            -- Define LSPs here
+
+            -- lua
             require("lspconfig").lua_ls.setup { capabilities = capabilities }
+
+            -- go
+            require("lspconfig").gopls.setup { capabilities = capabilities }
+            require("lspconfig").golangci_lint_ls.setup { capabilities = capabilities }
+
+            -- webdev
+            require("lspconfig").ts_ls.setup { capabilities = capabilities }
+            require("lspconfig").tailwindcss.setup { capabilities = capabilities }
+            require("lspconfig").biome.setup { capabilities = capabilities }
+
+            -- python
+            require("lspconfig").pyright.setup { capabilities = capabilities }
+
+            vim.diagnostic.config({ virtual_lines = true })
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('my.lsp', {}),
