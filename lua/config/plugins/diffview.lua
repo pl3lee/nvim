@@ -5,10 +5,22 @@ return {
             'nvim-tree/nvim-web-devicons'
         },
         config = function()
-            require("diffview").setup {}
-            vim.keymap.set("n", "<leader>gdo", function() vim.cmd("DiffviewOpen") end)
-            vim.keymap.set("n", "<leader>gdc", function() vim.cmd("DiffviewClose") end)
-            vim.keymap.set("n", "<leader>gdh", function() vim.cmd("DiffviewFileHistory %") end)
+            local actions = require("diffview.actions")
+            require("diffview").setup {
+                keymaps = {
+                    view = {
+                        { "n", "q", actions.close, { desc = "Close help menu" } },
+                    },
+                    file_panel = {
+                        { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close help menu" } },
+                    },
+                    file_history_panel = {
+                        { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close help menu" } },
+                    },
+                },
+            }
+            vim.keymap.set("n", "<leader>gd", function() vim.cmd("DiffviewOpen") end)
+            vim.keymap.set("n", "<leader>gh", function() vim.cmd("DiffviewFileHistory %") end)
         end
     }
 }
