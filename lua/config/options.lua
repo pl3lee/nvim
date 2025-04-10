@@ -29,6 +29,16 @@ vim.opt.scrolloff = 10            -- Keep at least 10 lines visible above and be
 
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+vim.opt.diffopt = {
+    "internal",            -- Use the internal diff algorithm
+    "filler",              -- Show filler lines for missing lines in the diff
+    "closeoff",            -- Close the diff view when all buffers are closed
+    "context:12",          -- Show 12 lines of context around changes
+    "algorithm:histogram", -- Use the histogram algorithm for better diff results
+    "linematch:200",       -- Perform line-level matching for up to 200 lines
+    "indent-heuristic"     -- Use heuristics to improve diff alignment based on indentation
+}
+
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- Clear highlighted search on escape
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz')             -- Recenter cursor for half page scroll
