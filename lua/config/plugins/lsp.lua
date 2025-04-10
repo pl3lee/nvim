@@ -22,7 +22,12 @@ return {
 
             -- go
             require("lspconfig").gopls.setup { capabilities = capabilities }
-            require("lspconfig").golangci_lint_ls.setup { capabilities = capabilities }
+            require("lspconfig").golangci_lint_ls.setup {
+                capabilities = capabilities,
+                init_options = {
+                    command = { "golangci-lint", "run", "--show-stats=false" }
+                }
+            }
 
             -- webdev
             require("lspconfig").ts_ls.setup { capabilities = capabilities }
