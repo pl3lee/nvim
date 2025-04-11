@@ -95,6 +95,12 @@ return {
 
                     if not client then return end
 
+                    -- Override LSP keymaps to use telescope
+                    vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions)
+                    vim.keymap.set('n', 'grr', require('telescope.builtin').lsp_references)
+                    vim.keymap.set('n', 'grt', require('telescope.builtin').lsp_type_definitions)
+
+
                     -- Auto-format ("lint") on save.
                     -- Usually not needed if server supports "textDocument/willSaveWaitUntil".
                     if not client:supports_method('textDocument/willSaveWaitUntil')
