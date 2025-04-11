@@ -38,6 +38,9 @@ return {
             -- python
             require("lspconfig").pyright.setup { capabilities = capabilities }
 
+            -- markdown
+            require("lspconfig").marksman.setup { capabilities = capabilities }
+
             -- Diagnostics, virtual lines and virtual text
             vim.diagnostic.config({
                 virtual_text = true,
