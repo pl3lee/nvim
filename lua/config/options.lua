@@ -61,6 +61,9 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste without replacing buffer content' })
 vim.keymap.set('n', '<leader>d', [["_d]], { desc = 'Delete without replacing buffer content' })
 
+-- Search and replace
+vim.keymap.set('n', '<leader>r', '*``cgn', { desc = 'Search current word and edit next occurrence' })
+
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking text",
     group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
