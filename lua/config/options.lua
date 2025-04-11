@@ -39,6 +39,17 @@ vim.opt.diffopt = {
     "indent-heuristic"     -- Use heuristics to improve diff alignment based on indentation
 }
 
+-- Folds
+vim.o.foldenable = true
+vim.o.foldlevel = 99
+vim.o.foldmethod = "expr"
+vim.o.foldtext = ""
+vim.opt.foldcolumn = "0"
+vim.opt.fillchars:append({ fold = " " })
+-- Default to treesitter folding
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.keymap.set('n', '<leader>z', 'za', { desc = 'Toggle fold' })
+
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- Clear highlighted search on escape
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz')             -- Recenter cursor for half page scroll
