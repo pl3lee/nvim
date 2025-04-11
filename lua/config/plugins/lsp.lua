@@ -16,6 +16,7 @@ return {
             local capabilities = require('blink.cmp').get_lsp_capabilities()
 
             -- Define LSPs here
+            -- Need to install LSPs manually, do :help lspconfig-all for installation instructions
 
             -- lua
             require("lspconfig").lua_ls.setup { capabilities = capabilities }
