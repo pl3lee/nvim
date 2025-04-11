@@ -22,6 +22,9 @@ return {
 
             local surround = require 'mini.surround'
             surround.setup {}
+
+            local indentscope = require 'mini.indentscope'
+            indentscope.setup {}
         end
     }
 }
